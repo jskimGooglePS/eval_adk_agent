@@ -2,9 +2,17 @@ import os
 from google.adk.agents.llm_agent import Agent
 from google.genai import types
 
-os.environ["GOOGLE_GENAI_USE_VERTEXAI"]="true"
-os.environ["GOOGLE_CLOUD_PROJECT"]="beha-data"
-os.environ["GOOGLE_CLOUD_LOCATION"]="global"
+import yaml
+from box import Box
+
+conf_url = 'config.yaml'
+with open(conf_url, 'r') as f:
+    config_yaml = yaml.load(f, Loader=yaml.FullLoader)
+    config = Box(config_yaml)
+
+os.environ["GOOGLE_GENAI_USE_VERTEXAI"]=config.google_genai_use_vertexai
+os.environ["GOOGLE_CLOUD_PROJECT"]=config.google_cloud_project
+os.environ["GOOGLE_CLOUD_LOCATION"]=config.google_cloud_location
 #os.environ["GOOGLE_CLOUD_LOCATION"]="us-central1"
 
 instruction = '''
@@ -203,8 +211,8 @@ step3. 결과는 *Output 예시*와 같은 구성의 json으로 반환하세요.
 '''
 
 root_agent = Agent(
-    model='gemini-3-flash-preview',
-    #model='gemini-3-flash',
+    #model='gemini-3-flash-preview',
+    model=config.gemini_model,
     name='root_agent',
     instruction=instruction,
     generate_content_config=types.GenerateContentConfig(

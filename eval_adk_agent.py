@@ -10,13 +10,21 @@ import numpy as np
 import json
 import os 
 
-os.environ["GOOGLE_GENAI_USE_VERTEXAI"]="true"
-os.environ["GOOGLE_CLOUD_PROJECT"]="beha-data"
-os.environ["GOOGLE_CLOUD_LOCATION"]="global"
+import yaml
+from box import Box
 
-EXCEL_PATH = 'data/input/evaluate_dataset_example.xlsx'
-OUTPUT_PATH = 'data/output/evaluate_results.xlsx' # 저장될 경로
-EMBEDDING_MODEL: str = 'gemini-embedding-001'
+conf_url = 'config.yaml'
+with open(conf_url, 'r') as f:
+    config_yaml = yaml.load(f, Loader=yaml.FullLoader)
+    config = Box(config_yaml)
+
+os.environ["GOOGLE_GENAI_USE_VERTEXAI"]=config.google_genai_use_vertexai
+os.environ["GOOGLE_CLOUD_PROJECT"]=config.google_cloud_project
+os.environ["GOOGLE_CLOUD_LOCATION"]=config.google_cloud_location
+
+EXCEL_PATH = config.excel_path
+OUTPUT_PATH = config.output_path
+EMBEDDING_MODEL: str = config.embedding_model
 
 client = genai.Client()
 

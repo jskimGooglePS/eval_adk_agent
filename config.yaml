@@ -1,0 +1,12 @@
+# VERTEXAI 환경설정
+google_genai_use_vertexai: 'true'
+google_cloud_project: 'beha-data'
+google_cloud_location: 'global'
+
+# 생성형 모델
+gemini_model: 'gemini-3-flash-preview'
+embedding_model: 'gemini-embedding-001'
+
+# INPUT/OUTPUT 경로 지정
+excel_path: 'data/input/evaluate_dataset_example.xlsx'
+output_path: 'data/output/evaluate_results.xlsx'
