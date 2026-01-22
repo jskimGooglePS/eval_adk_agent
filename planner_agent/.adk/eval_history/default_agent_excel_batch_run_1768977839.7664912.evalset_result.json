@@ -1,0 +1,279 @@
+{
+  "eval_set_result_id": "default_agent_excel_batch_run_1768977839.7664912",
+  "eval_set_result_name": "default_agent_excel_batch_run_1768977839.7664912",
+  "eval_set_id": "excel_batch_run",
+  "eval_case_results": [
+    {
+      "eval_set_file": "excel_batch_run",
+      "eval_set_id": "excel_batch_run",
+      "eval_id": "excel_case_1",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "tool_trajectory_avg_score",
+          "threshold": 1.0,
+          "judge_model_options": null,
+          "criterion": {
+            "threshold": 1.0
+          },
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null
+          }
+        },
+        {
+          "metric_name": "response_match_score",
+          "threshold": 0.8,
+          "judge_model_options": null,
+          "criterion": {
+            "threshold": 0.8
+          },
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": null
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-1a0849f5-b9e7-48cf-83db-0f1caba235e4",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "삼 더하기 삼은 몇이야?",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "저는 수학 문제를 풀 수 없습니다.",
+                  "thought": null,
+                  "thought_signature": "CtsCAY89a1-suC0y8lMxP0JbxHhWKOPa7F5wizH3PcuLWizxZWnNizjfrGqrUavtJnA5jsKEU9HAIhtIinGG86-nSYqWaIyscOwWBnXMNtis1yKqGwMILDg7cMMW_SQ0NGhcN3kVaqAw8hRU8fcTPY04-ohtDbTFUwtzwh3UjZ9xGbWYAvAcivZg5I2m3Efhe9dnnyk2qGeqeY5F3s7liBL1aD-RQlKcKSXCIeJ-H5lZyGbxByaMNYVIrUiLZft7MVD2SeJd1Brdy-NRUy5S94FJVIh1KtEp7uqMSwo5WnxiWAUX50YEkaz4q9NF3vmB3_zOQ9_ZgVQ1umcybacn_eers8mKFIFD1xR0jZc4BbAQlb1Xy_QBsSP7RDePhhKfMkQiuFmcQN-9W2S2lRNCGxay4ihoslcggdinMJkqAVXDJmSXLxe324Cu8EPn5u7toxyldhg_31L7ZImxL-o=",
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": []
+            },
+            "creation_timestamp": 1768977837.886784,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "root_agent": {
+                  "name": "root_agent",
+                  "instructions": "You are a helpful assistant that tells the current time in cities. Use the 'get_current_time' tool for this purpose\n\nYou are an agent. Your internal name is \"root_agent\". The description about you is \"Tells the current time in a specified city\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Returns the current tiem in a specified city.",
+                          "name": "get_current_time",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "city": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "city"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": null,
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search": null,
+                      "google_search_retrieval": null,
+                      "url_context": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "b47fcb8e-f75d-4035-9a57-f4945822cda2",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "삼 더하기 삼은 몇이야?",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "6입니다",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": null,
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "tool_trajectory_avg_score",
+              "threshold": 1.0,
+              "judge_model_options": null,
+              "criterion": {
+                "threshold": 1.0
+              },
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null
+              }
+            },
+            {
+              "metric_name": "response_match_score",
+              "threshold": 0.8,
+              "judge_model_options": null,
+              "criterion": {
+                "threshold": 0.8
+              },
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": null
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___37ae237d-027f-4a28-a571-500486a14220",
+      "session_details": null,
+      "user_id": "eval_user"
+    }
+  ],
+  "creation_timestamp": 1768977839.7664912
+}
